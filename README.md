@@ -1,4 +1,7 @@
 # ✈️ Havayolu Yolcu Memnuniyeti Analizi  
+
+![image](https://github.com/user-attachments/assets/160774c7-84f8-4188-8dbb-c5b3d22d235c)
+
 ## Final Projesi – Veri Ön İşleme & Keşifsel Veri Analizi (EDA)
 
 Bu proje, bir havayolu şirketinin yolcu verileri üzerinden müşteri memnuniyetini etkileyen faktörlerin belirlenmesi amacıyla yapılmıştır. Çalışma kapsamında veri seti detaylı bir şekilde analiz edilerek, memnuniyet düzeyine etki eden demografik ve seyahat odaklı değişkenler incelenmiştir.
@@ -74,6 +77,8 @@ Sayısal değişkenler üzerinden merkezi eğilim (ortalama, medyan), dağılım
 Korelasyon Matrisi Analizi
 Aşağıda uçuş deneyimi verisindeki değişkenlerin korelasyon ilişkileri incelenmiştir. Korelasyon katsayısı [-1, 1] aralığında olup, 1 mükemmel pozitif, -1 mükemmel negatif ilişkiyi ifade eder.
 
+![image](https://github.com/user-attachments/assets/ca5c265a-b6bb-449c-a148-bfa79e2cba6e)
+
 Öne Çıkan Bulgular
 Departure Delay in Minutes ile Arrival Delay in Minutes arasında çok yüksek pozitif korelasyon bulunmaktadır: 0.96.
 
@@ -100,10 +105,8 @@ Gecikmeler (kalkış ve varış) birbirine oldukça bağlıdır.
 Online hizmetlere ilişkin değişkenler (wifi, online rezervasyon kolaylığı, gate konumu) birbirleriyle ilişkilidir.
 Yaş ve uçuş mesafesi, diğer değişkenlerden nispeten bağımsızdır.
 
-Eksik Değer Analizi
+## Eksik Değer Analizi
 Veri setindeki eksik değerler aşağıda sayısal ve yüzdesel olarak özetlenmiştir. Eksik verinin yalnızca bir sütunda ve düşük oranla (yaklaşık %0.30) bulunduğu görülmektedir.
-
-Eksik Değer Analizi
 Veri setinde yalnızca Arrival Delay in Minutes değişkeninde eksik gözlemler bulunmaktadır. Toplam 310 eksik değer, tüm veri setinin yaklaşık %0.3’üne karşılık gelmektedir.
 
 Bu değişken, uçuş memnuniyeti açısından doğrudan etkili olan bir özelliktir. Eksik verilerin doğrudan silinmesi, potansiyel bilgi kaybına ve bazı gruplarda temsil eksikliğine neden olabilir. Bu nedenle silmek yerine anlamlı bir şekilde doldurulması tercih edilmiştir.
@@ -139,6 +142,8 @@ Bu bölümde:
 
 ### Aykırı Değer Analizi (IQR Yöntemi)
 
+![image](https://github.com/user-attachments/assets/ad110545-feed-4db5-a1f1-b5799300e8bd)
+
 Sayısal değişkenlerde aykırı değer analizi, IQR (Interquartile Range) yöntemine göre gerçekleştirilmiştir. Aşağıdaki tabloda, her değişken için aykırı değer sayısı ve toplam veri içindeki oranı yer almaktadır:
 
 | Değişken                     | Toplam Gözlem | Aykırı Değer Sayısı | Aykırı Oranı (%) |
@@ -173,10 +178,19 @@ Bu durum, uçuş gecikmelerinin bazı uçuşlarda çok ekstrem değerlere ulaşa
 ##  Görselleştirme
 
 Veri görselleştirme, değişkenlerin dağılımını ve değişkenler arası ilişkileri keşfetmek için kritik öneme sahiptir.  
+
+
+
 Bu bölümde:
 
 - Sayısal değişkenlerin histogram ve yoğunluk grafikleri (KDE)
+  
+  ![image](https://github.com/user-attachments/assets/9c011056-0f16-4a98-bb80-54c73f5fad43)
+  
 - Kategorik değişkenlerin sütun ve pasta grafikleri
+  
+  ![image](https://github.com/user-attachments/assets/ea5eca30-d610-44c4-b8c2-e21e606eafc1)
+
 
 ## Memnuniyetsiz Yolcuların Analizi
 
@@ -215,6 +229,9 @@ Bu hizmet alanlarının iyileştirilmesi, memnuniyetsizlik oranlarını azaltabi
 
 ###  Kalkış Gecikmeleri
 
+![image](https://github.com/user-attachments/assets/6248a085-ad31-4521-9f48-afc9997eee4d)
+
+
 Kalkış gecikmesi değişkeni sağa çarpık dağıldığı için logaritmik dönüşüm uygulanmıştır.  
 Analiz sonucunda:
 
@@ -222,6 +239,8 @@ Analiz sonucunda:
 - Gecikmeler, dolaylı olarak yolcu deneyimini ve memnuniyetini olumsuz etkilemektedir.
 
 ###  Kategorik Özelliklere Göre Dağılım
+
+![image](https://github.com/user-attachments/assets/1ac78308-82e8-41cc-8bc0-1f41b59fe255)
 
 Memnuniyetsiz yolcuların demografik ve seyahat bilgileri şu şekildedir:
 
@@ -249,6 +268,8 @@ göstermektedir.
 müşteri memnuniyetini artırmak adına kritik önem taşımaktadır.
 
 # Memnuniyet Analizi 
+
+![image](https://github.com/user-attachments/assets/2818514f-0e80-437f-a311-bf2b208b85b0)
 
 Uçuş deneyiminden memnun kalan yolcuların profili detaylı olarak incelenmiştir. Memnuniyet düzeyini artıran hizmet kalitesi faktörleri ve yolcu demografik özellikleri analiz edilmiştir. Özellikle, yolcuların hangi hizmetlerden daha olumlu puanlar verdiği ve gecikmelerin memnuniyet üzerindeki etkisi değerlendirilmiştir.
 
