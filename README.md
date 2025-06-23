@@ -277,6 +277,9 @@ Analiz sayesinde, yolcu memnuniyetini artırmak için öncelikli iyileştirme al
 
 ###  Kategorik Değişken Dağılımları
 
+![image](https://github.com/user-attachments/assets/305c699d-056f-48b0-aede-387bd326ab44)
+
+
 | Değişken       | Kategori           | Adet   | Yüzde (%) |
 |----------------|--------------------|--------|-----------|
 | **Gender**     | Female             | 22,534 | 50.05     |
@@ -296,3 +299,101 @@ Analiz sayesinde, yolcu memnuniyetini artırmak için öncelikli iyileştirme al
 - İş seyahati yapan yolcular ve Business sınıfındaki yolcular memnuniyet oranı en yüksek gruplar.
 - Hizmet kalitesi puanları genel olarak yüksek; özellikle online boarding, koltuk konforu ve bagaj işlemleri ön planda.
 - Gecikmeler ortalama düşük, ancak maksimum değerlerde aşırı uçlar mevcut.
+
+## Yolcu Profili ve Segmentasyonu
+
+![image](https://github.com/user-attachments/assets/ce1074c5-e656-4bb1-af71-6abaacb74c80)
+
+# Yolcu Segmentasyon Tablosu
+
+Aşağıdaki tablo, yolcuların **Müşteri Türü** (Sadık / Sadık Olmayan), **Cinsiyet**, **Seyahat Türü** (İş / Kişisel), ve **Seyahat Sınıfı** (Business, Eco, Eco Plus) bazında sayılarını göstermektedir.
+
+| Müşteri Türü     | Cinsiyet | Seyahat Türü      | Business | Eco   | Eco Plus |
+|------------------|----------|-------------------|----------|-------|----------|
+| Sadık Müşteri    | Kadın    | İş Seyahati       | 20,047   | 4,738 | 1,559    |
+| Sadık Müşteri    | Kadın    | Kişisel Seyahat   | 1,068    | 13,225| -        |
+| Sadık Müşteri    | Erkek    | İş Seyahati       | 20,116   | 4,758 | 1,620    |
+| Sadık Müşteri    | Erkek    | Kişisel Seyahat   | 1,078    | -     | -        |
+| Sadık Olmayan    | Kadın    | İş Seyahati       | 3,805    | 5,817 | 562      |
+| Sadık Olmayan    | Kadın    | Kişisel Seyahat   | 7        | 78    | -        |
+| Sadık Olmayan    | Erkek    | İş Seyahati       | 3,540    | 4,944 | 149      |
+| Sadık Olmayan    | Erkek    | Kişisel Seyahat   | 4        | -     | -        |
+
+> *Not:* Eksik veya sıfır olan hücreler tabloda boş bırakılmıştır.
+
+![image](https://github.com/user-attachments/assets/e2711ae4-f6ad-4f69-af5a-cc5688522fd3)
+
+
+### Değerlendirme
+
+- Sadık müşteriler çoğunlukla **iş seyahati** yapan ve **business** veya **eco** sınıfını tercih eden yolculardır.
+- Sadık olmayan müşteriler ise özellikle kadınlarda kişisel seyahatlerde **eco** sınıfını daha çok tercih etmektedir.
+- Erkek yolcuların iş seyahati ve business sınıfı tercihleri sadık müşteriler arasında oldukça yüksektir.
+- Kişisel seyahatlerde sadık olmayan yolcu sayısı oldukça düşük görünmektedir.
+
+## Sonuç ve Stratejik Öneriler
+
+Bu proje kapsamında, bir havayolu şirketine ait **103.904 yolcu verisi** üzerinden veri ön işleme ve **Keşifsel Veri Analizi (EDA)** teknikleri uygulanarak **müşteri memnuniyetini etkileyen temel faktörler** detaylı şekilde ortaya konmuştur.
+
+![image](https://github.com/user-attachments/assets/61f2b6c0-3521-4a8b-9482-ca4901d1b654)
+
+
+###  Ana Bulgular
+
+#### 1. **Hizmet Kalitesi Memnuniyetin Belirleyicisidir**
+- Memnun yolcular, özellikle **online boarding (4.03)**, **uçuş içi eğlence (3.96)** ve **koltuk konforu (3.97)** gibi hizmetlere yüksek puan vermiştir.
+- Bu değişkenlerde memnun ve memnun olmayan yolcular arasında **1 puandan fazla fark** gözlenmiştir.
+- En yüksek fark `Online boarding` değişkenindedir (**+1.37**).
+
+#### 2. **Gecikmeler Memnuniyetsizlikle Doğrudan İlişkili**
+- **Kalkış gecikmesi (`Departure Delay`)**, memnuniyetsiz yolcularda çarpıcı biçimde yüksektir.
+- `Departure Delay` ile `Arrival Delay` arasında **%96 pozitif korelasyon** tespit edilmiştir.
+- Gecikmeler memnuniyet üzerinde dolaylı ama güçlü bir etkiye sahiptir.
+
+#### 3. **Sadakat ve Seyahat Türü Kritik Segmentleyiciler**
+- **Sadık müşterilerde memnuniyet oranı %90**’ın üzerindedir.
+- **İş seyahati yapanlar (%92.72)** ve **Business sınıfı yolcular (%76.58)** memnuniyetin en yüksek olduğu gruplardır.
+- **Ekonomi sınıfı, kişisel seyahat ve sadık olmayan müşteriler**, memnuniyetsizlik oranı en yüksek segmenttir.
+
+#### 4. **Aykırı Değerler Gecikme Değişkenlerinde Yoğunlaşmıştır**
+- `Departure Delay`: **%13.98** aykırı değer oranı  
+- `Arrival Delay`: **%13.43** aykırı değer oranı  
+- Bu değerler uçuş iptali, rötar gibi operasyonel problemleri yansıtabilir ve analiz dışı bırakılmamalıdır.
+
+#### 5. **Eksik Veriler Segment Bazlı Medyan ile Doldurulmuştur**
+- Sadece `Arrival Delay` sütununda %0.30 oranında eksik veri vardır.
+- Bu eksik değerler, `Type of Travel` ve `Class` değişkenlerine göre **medyan** ile doldurulmuştur.
+- Böylece istatistiksel dengesizlik ve veri kaybı önlenmiştir.
+
+---
+
+### Stratejik Öneriler
+
+####  1. **Hizmet Kalitesine Yatırım**
+- `Online boarding`, `entertainment`, `seat comfort` alanlarında iyileştirmeler yapılmalı.
+- Dijital uygulamalar, kişiselleştirilmiş hizmetler ve kabin konforu artırılmalı.
+
+####  2. **Gecikmeleri Azaltacak Operasyonel Önlemler**
+- Yer hizmetleri, uçuş planlaması ve teknik bakım süreçleri optimize edilmeli.
+- KPI takibi ile gecikmeler düzenli olarak izlenmelidir.
+
+#### 3. **Hedef Segmentlere Yönelik Pazarlama**
+- Ekonomi sınıfı ve yeni müşterilere sadakat programları, kolay check-in ve promosyonlar sunulmalı.
+- Sadık müşteriler için özel ayrıcalıklar devam ettirilmelidir.
+
+#### 4. **Veri Tabanlı Süreç Yönetimi**
+- Segment bazlı raporlamalar ve düzenli EDA çalışmaları ile müşteri profili izlenmeli.
+- Karar süreçleri veri odaklı hale getirilmelidir.
+
+---
+
+### Genel Değerlendirme
+
+Bu proje, yalnızca bir EDA uygulaması değil, aynı zamanda **müşteri odaklı stratejik kararlar** geliştirmek için sağlam bir temel sunmaktadır.  
+Hizmet kalitesi ve zaman yönetimi gibi faktörlerin iyileştirilmesiyle havayolu şirketi;
+
+- **Müşteri memnuniyetini artırabilir,**
+- **Sadakat oranlarını yükseltebilir,**
+- **Rekabet avantajı elde edebilir.**
+
+
